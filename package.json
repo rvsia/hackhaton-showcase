@@ -1,22 +1,48 @@
 {
-  "name": "hackhaton-showcase",
-  "version": "0.0.1",
-  "description": "An UI showcase for Hackhaton projects",
-  "main": "index.js",
+  "name": "my-project",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rvsia/hackhaton-showcase.git"
-  },
-  "author": "Richard Všianský",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rvsia/hackhaton-showcase/issues"
-  },
-  "homepage": "https://github.com/rvsia/hackhaton-showcase#readme",
   "dependencies": {
-    "vue": "^2.6.14"
-  }
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.2.17",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "autoprefixer": "^9",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0",
+    "postcss": "^7",
+    "sass": "^1.43.5",
+    "sass-loader": "^10",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
