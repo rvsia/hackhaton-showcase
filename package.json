@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rvsia/hackhaton-showcase/issues"
   },
-  "homepage": "https://github.com/rvsia/hackhaton-showcase#readme"
+  "homepage": "https://github.com/rvsia/hackhaton-showcase#readme",
+  "dependencies": {
+    "vue": "^2.6.14"
+  }
 }
