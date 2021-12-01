@@ -10,7 +10,7 @@
       <FilterButton text="Games" color="red"/>
       <FilterButton text="ConsoleDot" color="red"/>
       <div class="mt-7" />
-      <div class="flex space-x-1">
+      <div class="flex space-x-1 flex-wrap">
         <div v-for="project in projects" :key="project.name">
           <ProjectCard :project="project" />
         </div>

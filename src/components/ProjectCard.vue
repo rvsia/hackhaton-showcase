@@ -1,20 +1,25 @@
 <template>
-      <div class="bg-opacity-60 bg-black text-white max-w-sm rounded-2xl blur-sm">
-          <img :src="project.image" class="w-sm rounded-t-2xl" />
-          <div class="p-3">
-            <h1 class="font-mono text-2xl mb-2">{{project.name}}</h1>
-            <div class="flex mb-4 space-x-2">
+      <div class="bg-opacity-60 bg-black text-white min-w-md w-80 rounded-2xl blur-sm h-full flex flex-col">
+          <img :src="project.image || '/placeholder.png'" class="w-sm rounded-t-2xl" />
+          <div class="p-3 flex flex-col flex-grow">
+            <h1 class="font-mono text-2xl">{{project.name}}</h1>
+            <div class="flex space-x-2 mt-1">
                 <div v-for="author in newAuthors" :key="author.name" :class="author.class">
                     {{author.name}}
                 </div>
             </div>
-            <div class="flex mb-4 space-x-2">
+            <div class="flex mb-2 space-x-2 mt-2">
                 <span v-for="label in newLabels" :key="label.text" :class="label.class">{{label.text}}</span>
             </div>
-            <div class="mt-4 mb-2">{{project.description}}</div>
-            <div class="text-right">
+            <div class="mt-1">{{project.description}}</div>
+            <div class="flex space-x-2">
+                <a v-for="link in project.additionalLinks" :key="link.label" target="_blank" rel="noopener noreferrer" :href="link.link" class="text-yellow-400 hover:text-yellow-500 cursor-pointer">
+                    {{link.label}}
+                </a>
+            </div>
+            <div class="text-right bottom-0 mt-auto mx-0 mb-0">
                 <a target="_blank" rel="noopener noreferrer" :href="project.link" class="text-pink-400 hover:text-pink-500 cursor-pointer animate-pulse">
-                    See more...
+                    ... see more!
                 </a>
             </div>
           </div>
