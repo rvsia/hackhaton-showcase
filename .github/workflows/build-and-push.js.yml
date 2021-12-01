@@ -9,6 +9,9 @@ on:
 
 jobs:
   build:
+    env:
+        SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+        SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -20,5 +23,4 @@ jobs:
     - run: yarn
     - run: yarn build
     - run: npm install -g surge
-    - run: cd dist
-    - run: surge consoledot-hackathon.surge.sh
+    - run: surge --project ./dist --domain consoledot-hackathon.surge.sh
