@@ -17,7 +17,7 @@
                     {{link.label}}
                 </a>
             </div>
-            <div class="text-right bottom-0 mt-auto mx-0 mb-0">
+            <div v-if="project.link" class="text-right bottom-0 mt-auto mx-0 mb-0">
                 <a target="_blank" rel="noopener noreferrer" :href="project.link" class="text-pink-400 hover:text-pink-500 cursor-pointer animate-pulse">
                     ... see more!
                 </a>
