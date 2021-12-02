@@ -27,7 +27,7 @@
 </template>
 
 <script>
-const colors = ['purple', 'green', 'red', 'yellow', 'blue']
+const colors = ['purple', 'green', 'pink', 'yellow', 'blue']
 
 export default {
   name: 'ProjectCard',
@@ -42,11 +42,11 @@ export default {
     const newLabels = [
         {
             text: props.project.hackathon,
-            class: `text-white-400 border-2 rounded-2xl p-1 border-white-400 cursor-pointer hover:bg-purple-700`
+            class: `text-yellow-400 border-2 rounded-2xl p-1 border-yellow-400 cursor-pointer hover:bg-purple-700`
         },
-        ...props.project.labels.map((label, index) => ({
+        ...props.project.labels.map((label) => ({
             text: label,
-            class: `text-${colors[(index + 2) % 5]}-400 border-2 rounded-2xl p-1 border-${colors[(index + 2) % 5]}-400 cursor-pointer hover:bg-purple-700`
+            class: `text-red-400 border-2 rounded-2xl p-1 border-red-400 cursor-pointer hover:bg-purple-700`
         }))
     ]
 

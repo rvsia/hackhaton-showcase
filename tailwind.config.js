@@ -13,6 +13,8 @@ module.exports = {
       'border-yellow-400',
       'text-blue-400',
       'border-blue-400',
+      'border-pink-400',
+      'text-pink-400',
     ]
   },
   darkMode: false, // or 'media' or 'class'

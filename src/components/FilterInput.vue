@@ -4,11 +4,12 @@
     @input="$emit('update:modelValue', $event.target.value)"
     class="
       mr-2
-      text-white
+      text-green-400
       border-2
       rounded-2xl
       p-2
-      border-white
+      border-green-400
+      placeholder-green-100
       cursor-pointer
       hover:bg-purple-700
       bg-transparent
