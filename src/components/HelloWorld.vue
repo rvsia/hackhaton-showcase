@@ -28,9 +28,14 @@
             v-on:click="toggleLabel(label)"
           />
         </div>
+        <div class="flex-grow text-white font-mono">
+          Projects: {{ getProjects.length }} |
+          <span :class="page > 1 ? 'text-green-400 mr-4 cursor-pointer' : 'text-gray-400 mr-4'">Previous Page</span>
+          <span :class="getProjects.length > (page * 6) ? 'text-purple-400 cursor-pointer hover:text-purple-200' : 'text-gray-400'">Next Page</span>
+        </div>
       </div>
       <div class="flex space-x-1 flex-wrap">
-        <div v-for="project in getProjects" :key="project.name">
+        <div v-for="project in paginateResults(getProjects)" :key="project.name">
           <ProjectCard :project="project" />
         </div>
       </div>
@@ -89,8 +94,18 @@ export default {
       return filteredProjects;
     },
   },
+  watch: {
+    text() {
+      this.page = 1
+    }
+  },
   methods: {
+    paginateResults(projects) {
+      console.log(projects)
+      return projects.slice((this.page - 1) * 6, ((this.page - 1) * 6) + 6)
+    },
     toggleHackathon(hackathon) {
+      this.page = 1;
       if (this.hackathons.includes(hackathon)) {
         this.hackathons.splice(this.hackathons.indexOf(hackathon), 1);
       } else {
@@ -98,6 +113,7 @@ export default {
       }
     },
     toggleLabel(label) {
+      this.page = 1;
       if (this.labels.includes(label)) {
         this.labels.splice(this.labels.indexOf(label), 1);
       } else {
