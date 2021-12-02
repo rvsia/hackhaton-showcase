@@ -30,8 +30,8 @@
         </div>
         <div class="flex-grow text-white font-mono">
           Projects: {{ getProjects.length }} |
-          <span :class="page > 1 ? 'text-green-400 mr-4 cursor-pointer' : 'text-gray-400 mr-4'">Previous Page</span>
-          <span :class="getProjects.length > (page * 6) ? 'text-purple-400 cursor-pointer hover:text-purple-200' : 'text-gray-400'">Next Page</span>
+          <span v-on:click="page--" :class="page > 1 ? 'text-green-400 mr-4 cursor-pointer' : 'text-gray-400 mr-4'">Previous Page</span>
+          <span v-on:click="page++" :class="getProjects.length > (page * 6) ? 'text-purple-400 cursor-pointer hover:text-purple-200' : 'text-gray-400'">Next Page</span>
         </div>
       </div>
       <div class="flex space-x-1 flex-wrap">
@@ -52,8 +52,6 @@ import projects from "../projects";
 
 const hackathons = [...new Set(projects.map(({ hackathon }) => hackathon))];
 const labels = [...new Set(projects.map(({ labels }) => labels).flat())];
-
-console.log(hackathons, labels);
 
 export default {
   name: "HelloWorld",
@@ -101,7 +99,6 @@ export default {
   },
   methods: {
     paginateResults(projects) {
-      console.log(projects)
       return projects.slice((this.page - 1) * 6, ((this.page - 1) * 6) + 6)
     },
     toggleHackathon(hackathon) {
