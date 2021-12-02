@@ -1,17 +1,36 @@
 <template>
   <div class="h-screen w-screen p-36 z-10">
     <div class="container mx-auto bg-gray">
-      <h1 class="text-white font-mono font-bold text-2xl mb-4">Hackhaton showcase</h1>
-      <FilterButton text="Q1 2021" color="yellow"/>
-      <FilterButton text="Q2 2021" color="green"/>
-      <FilterButton text="Q3 2021" color="blue"/>
-      <div class="mt-7" />
-      <FilterButton text="Fun" color="red"/>
-      <FilterButton text="Games" color="red"/>
-      <FilterButton text="ConsoleDot" color="red"/>
-      <div class="mt-7" />
+      <h1 class="text-white font-mono font-bold text-2xl mb-4">
+        Hackhaton showcase
+      </h1>
+      <div class="flex space-x-4 items-baseline mb-3">
+        <div>
+          <FilterInput v-model="text" />
+        </div>
+        <div>
+          <FilterButton
+            v-for="year in hackhatonsLabels"
+            :key="year + !hackhatons.includes(year)"
+            :text="year"
+            color="yellow"
+            :disabled="!hackhatons.includes(year)"
+            v-on:click="toggleHackathon(year)"
+          />
+        </div>
+        <div>
+          <FilterButton
+            v-for="label in labelsLabels"
+            :key="label + !labels.includes(label)"
+            :text="label"
+            color="red"
+            :disabled="!labels.includes(label)"
+            v-on:click="toggleLabel(label)"
+          />
+        </div>
+      </div>
       <div class="flex space-x-1 flex-wrap">
-        <div v-for="project in projects" :key="project.name">
+        <div v-for="project in getProjects" :key="project.name">
           <ProjectCard :project="project" />
         </div>
       </div>
@@ -20,21 +39,79 @@
 </template>
 
 <script>
-import FilterButton from './FilterButton.vue';
-import ProjectCard from './ProjectCard.vue';
+import FilterButton from "./FilterButton.vue";
+import FilterInput from "./FilterInput.vue";
+import ProjectCard from "./ProjectCard.vue";
 
-import projects from '../projects';
+import projects from "../projects";
+
+const hackhatons = [...new Set(projects.map(({ hackathon }) => hackathon))];
+const labels = [...new Set(projects.map(({ labels }) => labels).flat())];
+
+console.log(hackhatons, labels);
 
 export default {
-  name: 'HelloWorld',
-  data: () => ({projects}),
+  name: "HelloWorld",
+  data: () => ({
+    projects,
+    page: 1,
+    text: "",
+    labels: [...labels],
+    hackhatons: [...hackhatons],
+    hackhatonsLabels: [...hackhatons],
+    labelsLabels: [...labels],
+  }),
+  computed: {
+    getProjects() {
+      let filteredProjects = this.projects;
+
+      let text = this.text.toLowerCase();
+
+      if (text) {
+        filteredProjects = filteredProjects.filter((proj) => {
+          return (
+            proj.name.toLowerCase().includes(text) ||
+            proj.description.toLowerCase().includes(text) ||
+            proj.authors
+              .map(({ name }) => name)
+              .some((name) => name.toLowerCase().includes(text))
+          );
+        });
+      }
+
+      filteredProjects = filteredProjects.filter((proj) =>
+        this.hackhatons.includes(proj.hackathon)
+      );
+      filteredProjects = filteredProjects.filter((proj) =>
+        proj.labels.some((lab) => this.labels.includes(lab))
+      );
+
+      return filteredProjects;
+    },
+  },
+  methods: {
+    toggleHackathon(hackathon) {
+      if (this.hackhatons.includes(hackathon)) {
+        this.hackhatons.splice(this.hackhatons.indexOf(hackathon), 1);
+      } else {
+        this.hackhatons.push(hackathon);
+      }
+    },
+    toggleLabel(label) {
+      if (this.labels.includes(label)) {
+        this.labels.splice(this.labels.indexOf(label), 1);
+      } else {
+        this.labels.push(label);
+      }
+    },
+  },
   components: {
     FilterButton,
-    ProjectCard
-  }
-}
+    ProjectCard,
+    FilterInput,
+  },
+};
 </script>
 
 <style scoped>
-
 </style>

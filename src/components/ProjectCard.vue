@@ -3,7 +3,7 @@
           <img :src="project.image || '/placeholder.png'" class="w-sm rounded-t-2xl" />
           <div class="p-3 flex flex-col flex-grow">
             <h1 class="font-mono text-2xl">{{project.name}}</h1>
-            <div class="flex space-x-2 mt-1">
+            <div class="flex space-x-2 mt-1 flex-wrap">
                 <div v-for="author in newAuthors" :key="author.name" :class="author.class">
                     {{author.name}}
                 </div>

@@ -5,10 +5,10 @@
 <script>
 export default {
   name: 'FilterButton',
-  props: ['color', 'text'],
+  props: ['color', 'text', 'disabled'],
   setup: (props) => {
       return ({
-          newClass: `mr-2 text-${props.color}-400 border-2 rounded-2xl p-2 border-${props.color}-400 cursor-pointer hover:bg-purple-700`
+          newClass: `mr-2 border-2 rounded-2xl p-2 cursor-pointer hover:bg-purple-700 ${props.disabled ? 'border-gray-200 text-gray-200 opacity-60' : `border-${props.color}-400 text-${props.color}-400`}`
       })
   }
 }
