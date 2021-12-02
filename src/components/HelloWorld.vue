@@ -2,7 +2,7 @@
   <div class="h-screen w-screen p-36 z-10">
     <div class="container mx-auto bg-gray">
       <h1 class="text-white font-mono font-bold text-2xl mb-4">
-        Hackhaton showcase
+        Hackathon showcase
       </h1>
       <div class="flex space-x-4 items-baseline mb-3">
         <div>
@@ -10,11 +10,11 @@
         </div>
         <div>
           <FilterButton
-            v-for="year in hackhatonsLabels"
-            :key="year + !hackhatons.includes(year)"
+            v-for="year in hackathonsLabels"
+            :key="year + !hackathons.includes(year)"
             :text="year"
             color="yellow"
-            :disabled="!hackhatons.includes(year)"
+            :disabled="!hackathons.includes(year)"
             v-on:click="toggleHackathon(year)"
           />
         </div>
@@ -45,10 +45,10 @@ import ProjectCard from "./ProjectCard.vue";
 
 import projects from "../projects";
 
-const hackhatons = [...new Set(projects.map(({ hackathon }) => hackathon))];
+const hackathons = [...new Set(projects.map(({ hackathon }) => hackathon))];
 const labels = [...new Set(projects.map(({ labels }) => labels).flat())];
 
-console.log(hackhatons, labels);
+console.log(hackathons, labels);
 
 export default {
   name: "HelloWorld",
@@ -57,8 +57,8 @@ export default {
     page: 1,
     text: "",
     labels: [...labels],
-    hackhatons: [...hackhatons],
-    hackhatonsLabels: [...hackhatons],
+    hackathons: [...hackathons],
+    hackathonsLabels: [...hackathons],
     labelsLabels: [...labels],
   }),
   computed: {
@@ -80,7 +80,7 @@ export default {
       }
 
       filteredProjects = filteredProjects.filter((proj) =>
-        this.hackhatons.includes(proj.hackathon)
+        this.hackathons.includes(proj.hackathon)
       );
       filteredProjects = filteredProjects.filter((proj) =>
         proj.labels.some((lab) => this.labels.includes(lab))
@@ -91,10 +91,10 @@ export default {
   },
   methods: {
     toggleHackathon(hackathon) {
-      if (this.hackhatons.includes(hackathon)) {
-        this.hackhatons.splice(this.hackhatons.indexOf(hackathon), 1);
+      if (this.hackathons.includes(hackathon)) {
+        this.hackathons.splice(this.hackathons.indexOf(hackathon), 1);
       } else {
-        this.hackhatons.push(hackathon);
+        this.hackathons.push(hackathon);
       }
     },
     toggleLabel(label) {
