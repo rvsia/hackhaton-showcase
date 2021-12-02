@@ -30,8 +30,8 @@
         </div>
         <div class="flex-grow text-white font-mono">
           Projects: {{ getProjects.length }} |
-          <span v-on:click="page--" :class="page > 1 ? 'text-green-400 mr-4 cursor-pointer' : 'text-gray-400 mr-4'">Previous Page</span>
-          <span v-on:click="page++" :class="getProjects.length > (page * 6) ? 'text-purple-400 cursor-pointer hover:text-purple-200' : 'text-gray-400'">Next Page</span>
+          <span v-on:click="page--" :class="page > 1 ? 'text-green-400 mr-4 cursor-pointer' : 'text-gray-400 mr-4 pointer-events-none'">Previous Page</span>
+          <span v-on:click="page++" :class="getProjects.length > (page * 6) ? 'text-purple-400 cursor-pointer hover:text-purple-200' : 'text-gray-400 pointer-events-none'">Next Page</span>
         </div>
       </div>
       <div class="flex space-x-1 flex-wrap">
