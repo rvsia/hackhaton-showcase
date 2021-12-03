@@ -1,6 +1,6 @@
 export default {
     name: 'Ultralight Backpacking Web App',
-    hackathon: 'December 2021',
+    hackathon: 'November 2021',
     authors: [{name: 'Filip Hlaváč'}, { name: 'Radek Kalužík'}, {name: 'Eric Winchell'}],
     link: 'https://drive.google.com/file/d/1xO4WqtrtcWt0Psg7XS5MGpCkguo7CGqi/view?usp=sharing',
     additionalLinks: ['https://github.com/fhlavac/backpacking-frontend', 'https://github.com/fhlavac/backpacking'],
