@@ -41,7 +41,7 @@ You can store images is `public` folder.
 
 2. After adding new files, you have to run `yarn prebuild` to include these projects in the UI.
 
-**On CI this step is being done automatically, so you do not have to run locally.**
+**On CI this step is being done automatically, so you do not have to run it locally and push the generated index.**
 
 ## Project setup
 ```
