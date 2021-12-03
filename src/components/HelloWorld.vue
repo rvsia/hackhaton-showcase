@@ -4,11 +4,11 @@
       <h1 class="text-white font-mono font-bold text-2xl mb-4">
         Hackathon showcase
       </h1>
-      <div class="flex space-x-4 items-baseline mb-3">
+      <div class="flex space-x-4 items-baseline mb-3 flex-wrap space-y-4">
         <div>
           <FilterInput v-model="text" />
         </div>
-        <div>
+        <div class="whitespace-nowrap space-x-2">
           <FilterButton
             v-for="year in hackathonsLabels"
             :key="year + !hackathons.includes(year)"
@@ -18,7 +18,7 @@
             v-on:click="toggleHackathon(year)"
           />
         </div>
-        <div>
+        <div class="whitespace-nowrap space-x-2">
           <FilterButton
             v-for="label in labelsLabels"
             :key="label + !labels.includes(label)"
@@ -28,14 +28,35 @@
             v-on:click="toggleLabel(label)"
           />
         </div>
-        <div class="flex-grow text-white font-mono">
-          Projects: {{ getProjects.length }} |
-          <span v-on:click="page--" :class="page > 1 ? 'text-green-400 mr-4 cursor-pointer' : 'text-gray-400 mr-4 pointer-events-none'">Previous Page</span>
-          <span v-on:click="page++" :class="getProjects.length > (page * PER_PAGE) ? 'text-purple-400 cursor-pointer hover:text-purple-200' : 'text-gray-400 pointer-events-none'">Next Page</span>
+        <div class="flex-grow text-white font-mono flex flex-wrap space-x-2 text-right justify-end">
+          <span> Projects: {{ getProjects.length }} | </span>
+          <div>
+            <span
+              v-on:click="page--"
+              :class="
+                page > 1
+                  ? 'text-green-400 mr-4 cursor-pointer'
+                  : 'text-gray-400 mr-4 pointer-events-none'
+              "
+              >Previous Page</span
+            >
+            <span
+              v-on:click="page++"
+              :class="
+                getProjects.length > page * PER_PAGE
+                  ? 'text-purple-400 cursor-pointer hover:text-purple-200'
+                  : 'text-gray-400 pointer-events-none'
+              "
+              >Next Page</span
+            >
+          </div>
         </div>
       </div>
       <div class="flex space-x-1 space-y-1 flex-wrap">
-        <div v-for="project in paginateResults(getProjects)" :key="project.name">
+        <div
+          v-for="project in paginateResults(getProjects)"
+          :key="project.name"
+        >
           <ProjectCard :project="project" />
         </div>
       </div>
@@ -65,7 +86,7 @@ export default {
     hackathons: [...hackathons],
     hackathonsLabels: [...hackathons],
     labelsLabels: [...labels],
-    PER_PAGE
+    PER_PAGE,
   }),
   computed: {
     getProjects() {
@@ -97,12 +118,15 @@ export default {
   },
   watch: {
     text() {
-      this.page = 1
-    }
+      this.page = 1;
+    },
   },
   methods: {
     paginateResults(projects) {
-      return projects.slice((this.page - 1) * PER_PAGE, ((this.page - 1) * PER_PAGE) + PER_PAGE)
+      return projects.slice(
+        (this.page - 1) * PER_PAGE,
+        (this.page - 1) * PER_PAGE + PER_PAGE
+      );
     },
     toggleHackathon(hackathon) {
       this.page = 1;
