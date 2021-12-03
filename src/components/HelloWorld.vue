@@ -34,7 +34,7 @@
           <span v-on:click="page++" :class="getProjects.length > (page * PER_PAGE) ? 'text-purple-400 cursor-pointer hover:text-purple-200' : 'text-gray-400 pointer-events-none'">Next Page</span>
         </div>
       </div>
-      <div class="flex space-x-1 flex-wrap">
+      <div class="flex space-x-1 space-y-1 flex-wrap">
         <div v-for="project in paginateResults(getProjects)" :key="project.name">
           <ProjectCard :project="project" />
         </div>
