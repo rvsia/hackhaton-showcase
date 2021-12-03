@@ -13,6 +13,11 @@
     text-shadow: $text-shadow;
 }
 
+body {
+    background: black;
+    overflow-x: hidden;
+}
+
 head::before, head::after,
 body::before, body::after {
     display: block;
