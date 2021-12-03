@@ -3,6 +3,7 @@ import BestOnlineGame from './BestOnlineGame';
 import CarbonTracker from './CarbonTracker';
 import CheapBooze from './CheapBooze';
 import DbReaderTurnpike from './DbReaderTurnpike';
+import Double8Pool from './Double8Pool';
 import HBIDeployment from './HBIDeployment';
 import HackhatonShowcase from './HackhatonShowcase';
 import HostDataGen from './HostDataGen';
@@ -16,4 +17,4 @@ import SpotifyCli from './SpotifyCli';
 import StorWars from './StorWars';
 import StreamDeck from './StreamDeck';
 import UnityPuzzle from './UnityPuzzle';
-export default [ArduinoHR,BestOnlineGame,CarbonTracker,CheapBooze,DbReaderTurnpike,HBIDeployment,HackhatonShowcase,HostDataGen,InsightsGivesBack,MacroArduinoKB,MarioGame,NotAStarWarsGame,Pluggy,RhDataScience,SpotifyCli,StorWars,StreamDeck,UnityPuzzle]
+export default [ArduinoHR,BestOnlineGame,CarbonTracker,CheapBooze,DbReaderTurnpike,Double8Pool,HBIDeployment,HackhatonShowcase,HostDataGen,InsightsGivesBack,MacroArduinoKB,MarioGame,NotAStarWarsGame,Pluggy,RhDataScience,SpotifyCli,StorWars,StreamDeck,UnityPuzzle]
