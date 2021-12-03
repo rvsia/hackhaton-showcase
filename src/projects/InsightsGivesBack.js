@@ -6,5 +6,6 @@ export default {
     additionalLinks: [],
     labels: ['ConsoleDot'],
     description: 'You save money fixing your it infrastructure problems and donate it to a health area (hospitals/medical) that is associated -- geo local, donate the money to the area in which you do it; educate on the health situation in that area. Self healing infrastructure is healing the world.',
-    image: '/InsightsGivesBack.png'
+    image: '/InsightsGivesBack.png',
+    keywords: ['UX']
 }

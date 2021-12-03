@@ -11,12 +11,16 @@
             <div class="flex mb-2 space-x-2 mt-2">
                 <span v-for="label in newLabels" :key="label.text" :class="label.class">{{label.text}}</span>
             </div>
+            <div v-if="project.keywords?.length" class="flex mb-2 space-x-2 mt-2">
+                <span v-for="word in project.keywords" :key="word" class="font-bold font-mono">{{word}}</span>
+            </div>
             <div class="mt-1">{{project.description}}</div>
             <div class="flex space-x-2">
                 <a v-for="link in project.additionalLinks" :key="link.label" target="_blank" rel="noopener noreferrer" :href="link.link" class="text-yellow-400 hover:text-yellow-500 cursor-pointer">
                     {{link.label}}
                 </a>
             </div>
+            <div v-if="!project.link" class="mt-2" />
             <div v-if="project.link" class="text-right bottom-0 mt-auto mx-0 mb-0">
                 <a target="_blank" rel="noopener noreferrer" :href="project.link" class="text-pink-400 hover:text-pink-500 cursor-pointer animate-pulse">
                     ... see more!

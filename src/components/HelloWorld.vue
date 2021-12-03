@@ -101,7 +101,8 @@ export default {
             proj.description.toLowerCase().includes(text) ||
             proj.authors
               .map(({ name }) => name)
-              .some((name) => name.toLowerCase().includes(text))
+              .some((name) => name.toLowerCase().includes(text)) ||
+              proj.keywords?.some(word => word.toLowerCase().includes(text))
           );
         });
       }

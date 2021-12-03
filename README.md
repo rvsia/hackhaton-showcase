@@ -30,8 +30,9 @@ export default {
         {label: 'Trailer', link: 'https://drive.google.com/file/d/1X5IBkufrkVnLoOAiqTnPKcFMcRNpqlbe/view?usp=sharing'}
     ],
     labels: ['Games', 'Fun'], // Required
-    description: '2D Top down shooter not based on Star Wars assets with online scoreboard functionality.',
-    image: '/StorWars.png'
+    description: '2D Top down shooter not based on Star Wars assets with online scoreboard functionality.', // Required
+    image: '/StorWars.png',
+    keywords: ['ThreeJS', 'SocketIO'] // list of technologies
 }
 ```
 

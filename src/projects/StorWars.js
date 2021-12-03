@@ -14,5 +14,6 @@ export default {
     ],
     labels: ['Games', 'Fun'],
     description: '2D Top down shooter not based on Star Wars assets with online scoreboard functionality.',
-    image: '/StorWars.png'
+    image: '/StorWars.png',
+    keywords: ['Unity', '2D']
 }

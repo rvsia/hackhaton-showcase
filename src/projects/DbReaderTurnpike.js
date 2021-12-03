@@ -12,5 +12,6 @@ export default {
     ],
     labels: ['ConsoleDot'],
     description: 'Have a prototype available in stage which allows us to run select statements via straight sql or an active record request.',
-    image: '/dbreader.png'
+    image: '/dbreader.png',
+    keywords: ['Rails', 'Ruby', 'JavaScript', 'React']
 }

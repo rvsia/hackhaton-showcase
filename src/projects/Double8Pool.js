@@ -10,5 +10,6 @@ export default {
     additionalLinks: [],
     labels: ['Games', 'Fun'],
     description: 'An online 8-pool game with a twist. Both players take their turns at the same time.',
-    image: '/double8pool.png'
+    image: '/double8pool.png',
+    keywords: ['Javascript', 'Phaser', '2D']
 }

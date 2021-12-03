@@ -6,5 +6,6 @@ export default {
     additionalLinks: [],
     labels: ['Fun'],
     description: 'Research around Arduino and related components and working prototype.',
-    image: '/arduino.png'
+    image: '/arduino.png',
+    keywords: ['Arduino']
 }

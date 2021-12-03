@@ -12,5 +12,6 @@ export default {
     ],
     labels: ['Games', 'Fun'],
     description: 'Showcase of a very simple and dumb game we did in 4 days using express, socket.io, Three.js and WebGL.',
-    image: '/bestgame.png'
+    image: '/bestgame.png',
+    keywords: ['ThreeJS', 'SocketIO', '3D', 'JavaScript']
 }

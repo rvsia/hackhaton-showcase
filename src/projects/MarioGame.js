@@ -6,5 +6,6 @@ export default {
     additionalLinks: [],
     labels: ['Games', 'Fun'],
     description: 'Some kind of Mario game built on Unreal Engine.',
-    image: '/supermario.png'
+    image: '/supermario.png',
+    keywords: ['Unreal', '3D']
 }

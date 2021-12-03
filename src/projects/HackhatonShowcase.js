@@ -7,5 +7,6 @@ export default {
     link: 'https://github.com/rvsia/hackhaton-showcase',
     labels: ['ConsoleDot'],
     description: 'Page showcasing previously done Hackathons projects.',
-    image: '/hackshowcase.png'
+    image: '/hackshowcase.png',
+    keywords: ['Vue', 'Tailwindcss']
 }

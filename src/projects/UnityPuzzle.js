@@ -9,5 +9,6 @@ export default {
         {
             "name": "Priscila Gutierres"
         }
-    ]
+    ],
+    keywords: ['Unity']
 };

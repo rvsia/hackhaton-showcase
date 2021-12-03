@@ -9,5 +9,6 @@ export default {
         {
             "name": "Libor Pichler"
         }
-    ]
+    ],
+    keywords: ['Arduino']
 };
