@@ -16,6 +16,9 @@ export default {
         name: 'Justin Orringer'
     }],
     link: 'https://github.com/adventureboss/adminquest',
+    additionalLinks: [
+        { label: 'Discord', link: 'https://discord.gg/4kNAMrZkJG' }
+    ],
     labels: ['Games', 'Fun'],
     description: 'A sysadmin themed RPG where you are a sysadmin and have to save the day',
     image: '/adminquest.png',
