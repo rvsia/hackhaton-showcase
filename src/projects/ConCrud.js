@@ -1,7 +1,7 @@
 // ConCrud.js
 export default {
     name: 'Con Crud: A Text Adventure',
-    hackathon: 'May 2022',
+    hackathon: 'February 2022',
     authors: [{
         name: 'Stephen Adams'
     }, {
