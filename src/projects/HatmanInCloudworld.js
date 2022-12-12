@@ -1,7 +1,7 @@
 // ConCrud.js
 export default {
     name: 'Hatman in Cloudworld',
-    hackathon: 'May 2022',
+    hackathon: 'December 2022',
     authors: [{name: 'Adam Drew'}],
     link: 'https://github.com/adamrdrew/hatman-in-cloudworld',
     additionalLinks: [],
