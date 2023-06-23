@@ -1,0 +1,14 @@
+export default {
+    name: 'Versioned Path',
+    hackathon: 'June 2023',
+    authors: [{
+        name: 'Josejulio Martínez'
+    }],
+    link: 'https://github.com/josejulio/versioned-path',
+    additionalLinks: [
+        {label: 'Demo', link: 'https://www.youtube.com/watch?v=0o9xONdAunY'},
+    ],
+    labels: ['Fun'],
+    description: 'A library to reuse rest endpoints in multiple API versions within the same application.',
+    keywords: ['java', 'annotation-processing'] 
+}
