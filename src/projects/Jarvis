@@ -1,0 +1,17 @@
+// JARVIS.js
+export default {
+    name: 'JARVIS: Jira Automated Reporting via Intelligent Scanning', // Required
+    hackathon: 'June 2024', // Required
+    authors: [{ // Required
+        name: 'Ryan Abbott'
+    }],
+    link: 'https://script.google.com/u/0/home/projects/1kyrz_NRFYOHRXpSsPBsMNKD6gZYMiwBUKnIdpyHYX59lTuh7v67Z_DsH/edit',
+    additionalLinks: [
+        {label: 'Demo video', link: 'https://drive.google.com/file/d/1fqwrK8tciCPB75e_-nlOHYvHqNd07zev/view?usp=sharing'},
+        {label: 'Jarvis Drive', link: 'https://drive.google.com/drive/u/0/folders/1DAWSAo9-Jd3OvFXOtUrAro6HRdKmnu7z'},
+    ],
+    labels: ['ConsoleDot'], // Required, select from Games, Fun, ConsoleDot
+    description: 'JARVIS (Jira Automated Reporting via Intelligent Scanning) is a utility that automates the creation of tracking epics and sub-tasks for impacted services using Google Appscript and a Google Docs template.', // Required
+    image: '![Jarvis](https://static.wikia.nocookie.net/p__/images/0/06/J.A.R.V.I.S..jpg/revision/latest?cb=20140702123431&path-prefix=protagonist)',
+    keywords: ['Jarvis', 'Appscript', 'Jira', 'Toil', 'Productivity'] // list of technologies, topics, etc.
+}
